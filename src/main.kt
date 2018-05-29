@@ -1,37 +1,39 @@
-import kotlin.math.PI
-import kotlin.math.abs
-import kotlin.math.round
-
 fun main(args: Array<String>){
 
-    val num1 = 15
-    val num2 = 10
+    var aString = "Hello!"
+
+    val empty = String()
+    println("'$empty'")
+
+    val charArray = aString.toCharArray()
+    println(charArray.toList())
 
 
-    val sum = num1.plus(num2)
-    println("The diff is $sum")
+    val byteArray = aString.toByteArray()
+    /*Integer Value of each character*/
+    println(byteArray.toList())
 
 
-    val difference = num1.minus(num2)
-    println("The difference is $difference")
-
-    val product = num1.times(num2)
-    println("Product = $product")
+    aString += " and Welcome."
+    println(aString)
 
 
-    val quotient: Double = num1.toDouble().div(num2)
-    println("Quotient = $quotient")
+    val len = aString.length
+    for (i in 0 until len) {
+
+        val c = aString.get(i)
+        println(c)
+    }
+
+    val p = aString.indexOf("W")
+    val sub = aString.substring(p)
+    println(sub)
+
+    val string2 = aString.toUpperCase()
+    val match = aString.equals(string2, ignoreCase = true)
+    println("Do they match? $match")
 
 
-    val remainder = num1.rem(num2)
-    println("Remainder = $remainder")
 
-    val neg = -234.5
-    val absolute = abs(neg)
-    println("Absolute = $absolute")
-    println("Rounded = ${round(absolute)}")
-
-
-    println("Have a piece of $PI")
 
 }
