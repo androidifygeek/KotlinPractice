@@ -1,27 +1,13 @@
 fun main(args: Array<String>){
 
-    val myInt = 40
-    val myLong: Long = myInt.toLong()
+    val num1 = 15
+    val num2 = 10
 
-    println("the type of myLong is ${myLong::class.simpleName}")
+    val match = (num1 == num2)
+    println("Match = $match")
 
-    /*To get the Package Name */
-    println("the type of myLong is ${myLong::class.qualifiedName}")
+    val match1 = num1.equals(num2)
+    println("Match1 = $match1")
 
-
-    val myLong2 = 40.9
-    val myInt2 = myLong2.toInt() /*downcasting*/
-
-    println("The value of myLong2 is $myLong2")
-
-    println("The value of myInt2 is $myInt2")
-
-
-    val myInt3 = 420
-
-    /*coverting to Floting type value*/
-    val myDouble3 = myInt3.toDouble()
-
-    println("The value of myInt3 is $myInt3")
-    println("The value of myDouble3 is $myDouble3")
+    println("Comparison Result = ${num1.compareTo(num2)}")
 }
