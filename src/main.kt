@@ -1,39 +1,12 @@
 fun main(args: Array<String>){
 
-    var aString = "Hello!"
+    val builder = StringBuilder("पंचतंत्र की कहानियाँ मनोविज्ञान,\n")
+            .append("व्यवहारिकता तथा राजकाज के सिद्धांतों के विषयों को रोचक ढंग से प्रस्तुत करती हैं\n")
+            .append("तथा इन सभी विषयों की सीख देती हैं।")
 
-    val empty = String()
-    println("'$empty'")
-
-    val charArray = aString.toCharArray()
-    println(charArray.toList())
-
-
-    val byteArray = aString.toByteArray()
-    /*Integer Value of each character*/
-    println(byteArray.toList())
-
-
-    aString += " and Welcome."
-    println(aString)
-
-
-    val len = aString.length
-    for (i in 0 until len) {
-
-        val c = aString.get(i)
-        println(c)
-    }
-
-    val p = aString.indexOf("W")
-    val sub = aString.substring(p)
-    println(sub)
-
-    val string2 = aString.toUpperCase()
-    val match = aString.equals(string2, ignoreCase = true)
-    println("Do they match? $match")
-
-
+    /*StringBuilder class in Kotlin is Type Alias*/
+    val result = builder.toString()
+    println(result)
 
 
 }
