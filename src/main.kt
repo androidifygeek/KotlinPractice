@@ -1,49 +1,32 @@
-import javafx.beans.binding.When
-
 fun main(args: Array<String>) {
 
+    val nullValue: String? = null
+    println(nullValue)
 
-    print("Enter a State Abbreviation: ")
-    val state = readLine()
+    val l: Int? = nullValue?.length
+    println(l)
 
-//    if (state == "CA") {
-//        println("The Capital is Sacramento")
-//    } else if (state == "OR") {
-//        println("The Capital is Salem")
-//
-//    }
-
-//    val capital: String?
-//    when(state){
-//        "CA" -> capital = "Sacramento"
-//        "OR" -> capital = "Salem"
-//        else -> capital="unknown"
-//    }
-
-
-    val capital = when (state) {
-        "CA" -> "Sacramento"
-        "OR" -> "Salem"
-        else -> "unknown"
-    }
-    println("The capital is $capital")
-
-
-    when (state) {
-        "CA", "OR", "WA" -> println("WEST COAST")
-        "NH", "VT", "MA" -> println("NEW ENGLAND")
-        else -> println("Somewhere Else")
+    if (l == null) {
+        println("Length is null")
     }
 
-    val theAnswer = 46
-    when (theAnswer) {
-        in 1..39 -> println("Not Yet")
-        in 40..45 -> println("close enough")
-        else -> {
-            println("Not Really!")
-            println("Definitely Not")
-        }
-
+    val msg = if (l != null) {
+        "Length: $l"
+    } else {
+        "l is null"
     }
+    println(msg)
 
+
+    val l2 = l ?: -1
+    println("The value of l2 is $l2")
+
+
+    try {
+        val l3 = l!!
+        println("The value of l3 $l3 ")
+
+    } catch (e: KotlinNullPointerException) {
+        println("l3 is null")
+    }
 }
